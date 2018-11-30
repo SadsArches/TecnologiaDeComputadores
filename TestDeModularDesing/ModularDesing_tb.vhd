@@ -20,7 +20,7 @@ architecture behavior of tb.MEMORY is
 	
 	process begin
 		CLK <= '0'; wait for 5ns;
-		CLK <= '0'; wait for 5ns;
+		CLK <= '1'; wait for 5ns;
 	end process;
 	
 	
