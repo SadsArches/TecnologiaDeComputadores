@@ -1,5 +1,5 @@
 library IEEE;
-use IEEE.STD_LOGIC_1644.ALL;
+use IEEE.STD_LOGIC_1164.ALL;
 
 entity MEMORY is
 	port(
@@ -29,20 +29,20 @@ architecture structural of MEMORY is
 	signal INT_VALID, INT_FULL : STD_LOGIC;
 begin
 	SENDER1 : SENDER port map(
-		ENABLE => not INT_FULL;
-		CLR => CLR;
-		CLK => CLK;
-		DATA => INT_DATA;
+		ENABLE => not INT_FULL,
+		CLR => CLR,
+		CLK => CLK,
+		DATA => INT_DATA,
 		VALID => INT_VALID
 	);
 		
 	STORAGE1 : STORAGE port map(
-		CLR => CLR;
-		WE => INT_VALID;
-		CLK => CLK;
-		DATA =>INT_DATA;
-		FULL=>INT_FULL;
-		EMPTY=>EMPTY;
+		CLR => CLR,
+		WE => INT_VALID,
+		CLK => CLK,
+		DATA =>INT_DATA,
+		FULL=>INT_FULL,
+		EMPTY=>EMPTY,
 		Q=>Q
 	);
 
